@@ -107,3 +107,40 @@ Thu 16 May 2024 03:32:24 AM UTC:
  tests:  5|3
 total_score: 35/70
 19bd8a9
+Thu 16 May 2024 04:12:33 AM UTC: 
+ sudoku.c | 35 +++++++++++++++++++++++------------
+ 1 file changed, 23 insertions(+), 12 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:67:21: error: expected identifier before ‘,’ token
+   67 |       if (esta_c(n->, n->sudo[i][k]) || esta_f(n, n->sudo[i][k])) {
+      |                     ^
+sudoku.c:67:34: error: ‘k’ undeclared (first use in this function)
+   67 |       if (esta_c(n->, n->sudo[i][k]) || esta_f(n, n->sudo[i][k])) {
+      |                                  ^
+sudoku.c:67:34: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:62:7: error: unused variable ‘aux’ [-Werror=unused-variable]
+   62 |   int aux = 0;
+      |       ^~~
+test.c: In function ‘esta_c’:
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+test.c:263: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+In file included from test.c:5:
+sudoku.c:57:6: error: ‘esta_f’ defined but not used [-Werror=unused-function]
+   57 | bool esta_f(Node* n, int pos) {
+      |      ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3faff5b

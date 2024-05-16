@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "list.h"
 
 
@@ -44,26 +45,31 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){ //si es válido retorna 1 (True), sino retorna 0 (False)
-  int i,j,k;
-  int cont[10];
-  for(i=0;i<9;i++) {
-    for(j=0;j<9;j++) {
-      if(n->sudo[i][j]==0) 
-        continue;
-      for(k=0;k<10;k++) 
-        cont[k]=0; 
-      for(k=0;k<9;k++) {
-        if(n->sudo[i][k]!=0) cont[n->sudo[i][k]]++; 
-          if(cont[n->sudo[i][k]]>1) 
-            return 0;
-        
+bool esta_c(Node* n, int pos) {
+  for (int i = 0; i < 9; i++) {
+    for (int k = 0; k < 9; i++) {
+      if (n->sudo[i][k] == pos) {
+        return true;
       }
-       
+    }
+  return false;
+}
+bool esta_f(Node* n, int pos) {
+  
+  return false;
+}
+int is_valid(Node* n){ //si es válido retorna 1 (True), sino retorna 0 (False)
+  int aux = 0;  
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      if (n->sudo[i][j] == 0) 
+        continue;
+      if (esta_c(n->, n->sudo[i][k]) || esta_f(n, n->sudo[i][k])) {
+        return 0;
+      }
     }
   }
-  
-  return 1;
+  return 1; 
 }
 
 
@@ -86,6 +92,11 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      if (n->sudo[i][j] == 0) return 0;
+    }
+  }
     return 0;
 }
 
