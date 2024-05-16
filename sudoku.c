@@ -47,7 +47,7 @@ void print_node(Node* n){
 
 
 int is_valid(Node* n){ //si es válido retorna 1 (True), sino retorna 0 (False)
-  int aux = 0;  
+  //int aux = 0;  
   for (int i = 0; i < 9; i++) {
     for (int j = 0; j < 9; j++) {
       if (n->sudo[i][j] == 0) 
