@@ -45,28 +45,14 @@ void print_node(Node* n){
     printf("\n");
 }
 
-bool esta_c(Node* n, int pos) {
-  for (int i = 0; i < 9; i++) {
-    for (int k = 0; k < 9; i++) {
-      if (n->sudo[i][k] == pos) {
-        return true;
-      }
-    }
-  return false;
-}
-bool esta_f(Node* n, int pos) {
-  
-  return false;
-}
+
 int is_valid(Node* n){ //si es válido retorna 1 (True), sino retorna 0 (False)
   int aux = 0;  
   for (int i = 0; i < 9; i++) {
     for (int j = 0; j < 9; j++) {
       if (n->sudo[i][j] == 0) 
         continue;
-      if (esta_c(n->, n->sudo[i][k]) || esta_f(n, n->sudo[i][k])) {
-        return 0;
-      }
+      
     }
   }
   return 1; 

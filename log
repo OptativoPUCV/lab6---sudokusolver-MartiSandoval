@@ -144,3 +144,14 @@ sudoku.c:57:6: error: ‘esta_f’ defined but not used [-Werror=unused-function
 cc1: all warnings being treated as errors
 Compilation failed
 3faff5b
+Thu 16 May 2024 04:12:54 AM UTC: 
+ sudoku.c | 16 +---------------
+ 1 file changed, 1 insertion(+), 15 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:50:7: error: unused variable ‘aux’ [-Werror=unused-variable]
+   50 |   int aux = 0;
+      |       ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+d259d70
