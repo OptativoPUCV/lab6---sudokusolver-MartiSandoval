@@ -217,3 +217,17 @@ test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 be9368f
+Thu 16 May 2024 04:23:48 AM UTC: 
+ sudoku.c | 21 +--------------------
+ 1 file changed, 1 insertion(+), 20 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:51:7: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   51 |       if (n->sudo[i][j] == 0)
+      |       ^~
+sudoku.c:53:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   53 |         return 0;
+      |         ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9b49d81
