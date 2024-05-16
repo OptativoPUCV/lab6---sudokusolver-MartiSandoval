@@ -57,7 +57,8 @@ List* get_adj_nodes(Node* n){
         // Si la celda está vacía, es un posible movimiento
         if(n->sudo[i][j] == '0') {
           for (int k = 1; k <= 9; k++) {
-            Node* newNode = copy(n);
+            Node* newNode = createNode();
+            newNode = copy(n);
             n->sudo[i][j] = k;
             pushBack(list, newNode);
           }
