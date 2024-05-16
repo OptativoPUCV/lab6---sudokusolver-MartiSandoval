@@ -74,7 +74,7 @@ List* get_adj_nodes(Node* n) {
                     if(is_valid(newNode) == 1) {
                         pushBack(list, newNode);
                     } else {
-                        freeNode(newNode); // Ensure to free invalid nodes
+                        free(newNode); // Ensure to free invalid nodes
                     }
                 }
                 return list; // Return immediately after processing the first empty cell
