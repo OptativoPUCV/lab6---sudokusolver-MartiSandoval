@@ -50,7 +50,6 @@ int is_valid(Node* n) { //si es válido retorna 1 (True), sino retorna 0 (False)
     for (int j = 0; j < 9; j++) {
       if (n->sudo[i][j] == 0) 
         continue;
-        return 0;
       }
     }
   
