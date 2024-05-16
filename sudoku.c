@@ -57,8 +57,7 @@ int is_valid(Node* n){ //si es válido retorna 1 (True), sino retorna 0 (False)
          fila[n->sudo[i][j]] = 1;
       }
     }
-    return 1;
-  }
+  
   return 1; 
 }
 
