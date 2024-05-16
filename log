@@ -87,3 +87,17 @@ sudoku.c:55:53: note: ...this statement, but the latter is misleadingly indented
 cc1: all warnings being treated as errors
 Compilation failed
 067199e
+Thu 16 May 2024 03:32:09 AM UTC: 
+ sudoku.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:57:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   57 |         if(n->sudo[i][k]!=0) cont[n->sudo[i][k]]++; {
+      |         ^~
+sudoku.c:57:53: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   57 |         if(n->sudo[i][k]!=0) cont[n->sudo[i][k]]++; {
+      |                                                     ^
+cc1: all warnings being treated as errors
+Compilation failed
+346d5ef

@@ -49,11 +49,14 @@ int is_valid(Node* n){ //si es válido retorna 1 (True), sino retorna 0 (False)
   int cont[10];
   for(i=0;i<9;i++) {
     for(j=0;j<9;j++) {
-      if(n->sudo[i][j]==0) continue;
-      for(k=0;k<10;k++) cont[k]=0; 
+      if(n->sudo[i][j]==0) 
+        continue;
+      for(k=0;k<10;k++) 
+        cont[k]=0; 
       for(k=0;k<9;k++) {
         if(n->sudo[i][k]!=0) cont[n->sudo[i][k]]++; {
-          if(cont[n->sudo[i][k]]>1) return 0;
+          if(cont[n->sudo[i][k]]>1) 
+            return 0;
         }
       }
        
