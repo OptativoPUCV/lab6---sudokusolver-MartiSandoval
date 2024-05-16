@@ -45,19 +45,34 @@ void print_node(Node* n){
     printf("\n");
 }
 
-
-int is_valid(Node* n){ //si es válido retorna 1 (True), sino retorna 0 (False)
-  //int aux = 0;  
-    for(int i = 0 ; i < 9 ; i++){
-      int fila[10] = {0};
-      for(int j = 0 ; j < 9 ; j++){
-         if(n->sudo[i][j] != 0 && fila[n->sudo[i][j]] == 1){
-            return 0;
-         }
-         fila[n->sudo[i][j]] = 1;
+bool esta_c(int sudo[][9], int pos) {
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      if (sudo[i][j] == pos) {
+        return true;
       }
     }
+  }
+  return false;
+}
+bool esta_f(int sudo[][9], int pos) {
+  for (int i = 0; i < 9; i++) {
+    if (sudo[i][0] == pos) {
+      return true;
+  }
+  return false;
+}
   
+int is_valid(Node* n) { //si es válido retorna 1 (True), sino retorna 0 (False)
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      if (n->sudo[i][j] == 0) 
+        continue;
+      if (esta_c(n->sudo, n->sudo[i][j]) || esta_f(n->sudo, n->sudo[i][j])) {
+        return 0;
+      }
+    }
+  }
   return 1; 
 }
 
@@ -81,14 +96,6 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
-  for (int i = 0; i < 9; i++) {
-    for (int j = 0; j < 9; j++) {
-      if (n->sudo[i][j] == 0) return 0;
-    }
-  }
-  if (is_valid(n)) {
-    return 1;
-  }
     return 0;
 }
 
