@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "list.h"
 
 
 typedef struct{
-   int sudo[9][9];
+   int sudo[9][9]; 
 }Node;
 
 Node* createNode(){
@@ -50,8 +51,21 @@ int is_valid(Node* n){
 
 
 List* get_adj_nodes(Node* n){
-    List* list=createList();
-    return list;
+  List* list=createList();
+  for(int i = 0; i < 3; i++) {
+      for(int j = 0; j < 3; j++) {
+        // Si la celda está vacía, es un posible movimiento
+        if(n->sudo[i][j] == '0') {
+          for (int k = 1; k <= 9; k++) {
+            copy(n);
+            n->sudo[i][j] = k;
+            pushBack(list, n);
+            
+          }
+        }
+      }
+  }
+  return list;
 }
 
 
