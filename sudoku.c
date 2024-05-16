@@ -44,9 +44,23 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
-
-    return 1;
+int is_valid(Node* n){ //si es válido retorna 1 (True), sino retorna 0 (False)
+  int i,j,k;
+  int cont[10];
+  for(i=0;i<9;i++) {
+    for(j=0;j<9;j++) {
+      if(n->sudo[i][j]==0) continue;
+      for(k=0;k<10;k++) cont[k]=0; 
+      for(k=0;k<9;k++) {
+        if(n->sudo[i][k]!=0) cont[n->sudo[i][k]]++; {
+          if(cont[n->sudo[i][k]]>1) return 0;
+        }
+      }
+       
+    }
+  }
+  
+  return 1;
 }
 
 
@@ -57,7 +71,6 @@ List* get_adj_nodes(Node* n){
       for(int j = 0; j < 3; j++) {
         if(n->sudo[i][j] == 0) {
           for (int k = 1; k <= 9; k++) {
-            //Node* newNode = createNode();
             Node *newNode = copy(n);
             newNode->sudo[i][j] = k;
             pushBack(list, newNode);

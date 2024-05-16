@@ -73,3 +73,17 @@ Thu 16 May 2024 03:16:36 AM UTC:
  tests:  2|4
 total_score: 15/70
 d9b0e7f
+Thu 16 May 2024 03:31:07 AM UTC: 
+ sudoku.c | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:55:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   55 |         if(n->sudo[i][k]!=0) cont[n->sudo[i][k]]++; {
+      |         ^~
+sudoku.c:55:53: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   55 |         if(n->sudo[i][k]!=0) cont[n->sudo[i][k]]++; {
+      |                                                     ^
+cc1: all warnings being treated as errors
+Compilation failed
+067199e
