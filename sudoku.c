@@ -77,6 +77,9 @@ List* get_adj_nodes(Node* n){
             newNode = copy(n);
             newNode->sudo[i][j] = k;
             pushBack(list, newNode);
+            if (is_valid(newNode) == 0) {
+              popBack(list);
+            }
           }
         }
       }
