@@ -62,27 +62,26 @@ int is_valid(Node* n){
   return 1;
 }
 
+List* get_adj_nodes(Node* n) {
+    List* list = createList();
 
-List* get_adj_nodes(Node* n){
-  List* list=createList();
-  
-  for(int i = 0; i < 3; i++) {
-      for(int j = 0; j < 3; j++) {
-        if(n->sudo[i][j] == 0) {
-          for (int k = 1; k <= 9; k++) {
-            Node *newNode = copy(n);
-            newNode->sudo[i][j] = k;
-            if (is_valid(newNode) == 1) {
-              pushBack(list, newNode);
+    for(int i = 0; i < 9; i++) {
+        for(int j = 0; j < 9; j++) {
+            if(n->sudo[i][j] == 0) {
+                for(int k = 1; k <= 9; k++) {
+                    Node *newNode = copy(n);
+                    newNode->sudo[i][j] = k;
+                    if(is_valid(newNode) == 1) {
+                        pushBack(list, newNode);
+                    } else {
+                        freeNode(newNode); // Ensure to free invalid nodes
+                    }
+                }
+                return list; // Return immediately after processing the first empty cell
             }
-            else {
-              free(newNode);
-            }
-          }
         }
-      }
-  }
-  return list;
+    }
+    return list;
 }
 
 

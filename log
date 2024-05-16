@@ -291,3 +291,15 @@ Thu 16 May 2024 05:28:27 AM UTC:
  tests:  6|2
 total_score: 45/70
 b3b7cac
+Thu 16 May 2024 05:28:50 AM UTC: 
+ sudoku.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:77:25: error: implicit declaration of function ‘freeNode’; did you mean ‘createNode’? [-Werror=implicit-function-declaration]
+   77 |                         freeNode(newNode); // Ensure to free invalid nodes
+      |                         ^~~~~~~~
+      |                         createNode
+cc1: all warnings being treated as errors
+Compilation failed
+c9e4471
