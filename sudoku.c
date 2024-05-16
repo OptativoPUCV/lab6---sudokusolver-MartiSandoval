@@ -86,7 +86,9 @@ int is_final(Node* n){
       if (n->sudo[i][j] == 0) return 0;
     }
   }
-  if is_valid(n);
+  if (is_valid(n)) {
+    return 1;
+  }
     return 0;
 }
 

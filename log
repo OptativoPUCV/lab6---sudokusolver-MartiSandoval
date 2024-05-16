@@ -190,3 +190,9 @@ sudoku.c:89:6: error: expected ‘(’ before ‘is_valid’
       |      (
 Compilation failed
 ad50930
+Thu 16 May 2024 04:15:04 AM UTC: 
+ sudoku.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+ tests:  5|3
+total_score: 35/70
+19be71e
