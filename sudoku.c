@@ -65,7 +65,6 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
   if (n == NULL) return NULL;
-
   
   List* list = createList();
   
@@ -77,7 +76,7 @@ List* get_adj_nodes(Node* n){
             newNode = copy(n);
             newNode->sudo[i][j] = k;
             if(is_valid(newNode)) {
-              pushBack(list, newNode);
+              pushFront(list, newNode);
             }
           }
         }
