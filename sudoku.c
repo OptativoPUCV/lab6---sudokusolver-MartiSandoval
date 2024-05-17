@@ -76,9 +76,8 @@ List* get_adj_nodes(Node* n){
             Node *newNode = createNode();
             newNode = copy(n);
             newNode->sudo[i][j] = k;
-            pushBack(list, newNode);
-            if (is_valid(newNode) == 0) {
-              popBack(list);
+            if(is_valid(newNode)) {
+              pushBack(list, newNode);
             }
           }
         }
