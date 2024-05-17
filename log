@@ -411,3 +411,9 @@ sudoku.c:76:13: error: ‘newNode’ undeclared (first use in this function); di
 sudoku.c:76:13: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 8206875
+Fri 17 May 2024 09:56:25 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|2
+total_score: 45/70
+1bf1be6
