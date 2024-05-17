@@ -399,3 +399,15 @@ Fri 17 May 2024 09:55:14 PM UTC:
  tests:  4|3
 total_score: 30/70
 f618e83
+Fri 17 May 2024 09:56:16 PM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:76:13: error: ‘newNode’ undeclared (first use in this function); did you mean ‘Node’?
+   76 |             newNode = copy(n);
+      |             ^~~~~~~
+      |             Node
+sudoku.c:76:13: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+8206875
