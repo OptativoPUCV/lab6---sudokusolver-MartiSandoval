@@ -127,9 +127,10 @@ Node* DFS(Node* initial, int* cont){
     List* adj = get_adj_nodes(n);
     Node* aux = first(adj);
     while (aux != NULL) {
-      pushBack(pila, aux);
+      push(pila, aux);
       aux = next(adj);
     }
+    free(adj);
     free(n);
   }
   return NULL;
