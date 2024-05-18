@@ -119,7 +119,7 @@ Node* DFS(Node* initial, int* cont){
   while (top(pila) != NULL) {
     Node* n = top(pila);
     pop(pila);
-    cont++;
+    (*cont)++;
     
     if (is_final(n)) 
       return n;
@@ -130,7 +130,6 @@ Node* DFS(Node* initial, int* cont){
       push(pila, aux);
       aux = next(adj);
     }
-    free(adj);
     free(n);
   }
   return NULL;
