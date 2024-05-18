@@ -119,12 +119,14 @@ Node* DFS(Node* initial, int* cont){
     Node* n = top(pila);
     pop(pila);
     if (is_final(n)) return n;
+    
     List* adj = get_adj_nodes(n);
     Node* aux = first(adj);
     while (aux != NULL) {
       push(pila, aux);
       aux = next(adj);
     }
+    free(n);
     
   }
   return NULL;
