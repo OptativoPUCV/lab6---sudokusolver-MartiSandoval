@@ -126,7 +126,7 @@ Node* DFS(Node* initial, int* cont){
       push(pila, aux);
       aux = next(adj);
     }
-    free(n);
+    free(adj);
     
   }
   return NULL;
