@@ -120,7 +120,8 @@ Node* DFS(Node* initial, int* cont){
     Node* n = top(pila);
     pop(pila);
     cont++;
-    if (is_final(n)) return n;
+    if (is_final(n)) 
+      return n;
     
     List* adj = get_adj_nodes(n);
     Node* aux = first(adj);
