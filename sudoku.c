@@ -128,7 +128,6 @@ Node* DFS(Node* initial, int* cont){
     Node* aux = first(adj);
     while (aux != NULL) {
       push(pila, aux);
-      print_node(aux);
       aux = next(adj);
     }
     free(n);
