@@ -123,7 +123,7 @@ Node* DFS(Node* initial, int* cont){
     
     if (is_final(n)) 
       return n;
-    
+    print_node(n);
     List* adj = get_adj_nodes(n);
     Node* aux = first(adj);
     while (aux != NULL) {
